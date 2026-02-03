@@ -1,0 +1,23 @@
+ @import url("https://use.typekit.net/brm2bfv.css");
+
+:root{
+    --font-primary: "univers-next-pro", sans-serif;
+    --color-1: rgb(248, 195, 0);
+    --color-2: rgb(0, 146, 63) ;
+}
+
+/* reset */
+body {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: var(--font-primary);
+}
