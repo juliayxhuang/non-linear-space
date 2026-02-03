@@ -21,3 +21,12 @@ body {
     color: white;
     font-family: var(--font-primary);
 }
+
+p {
+    color: white;
+    font-size: 2em;
+}
+
+a {
+    font-size: 2em;
+}

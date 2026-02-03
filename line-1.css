@@ -1,9 +1,17 @@
-@import url("https://use.typekit.net/brm2bfv.css");
+@import 'styles.css';
 
 body {
-    background-color: black;
-    font-family: sans-serif;
-    color: white;
     text-align: center;
     margin: 5em;
+}
+
+p {
+    word-spacing: 100vw;
+    line-height: 2;
+}
+
+a {
+  color: var(--color-1);
+  font-weight: bold;
+  text-decoration: none; /* removes underline */
 }
