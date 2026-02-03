@@ -4,13 +4,14 @@
   color: rgb(208, 2, 2);
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.9em !important;
   position: fixed;
   margin: 0.5em;
   top: 0.2em;
   left: 0.2em;
   transform-origin: left;
   transition: transform 0.1s ease;
+  z-index: 100;
 }
 
 .map:hover {

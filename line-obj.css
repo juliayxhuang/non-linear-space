@@ -1,0 +1,34 @@
+@import 'styles.css';
+
+body {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;
+  margin: 0;
+  position: relative;
+}
+
+.line-horizontal {
+  width: 100%; /* or 500px, 50%, etc */
+  height: 0.8em; /* thickness */
+  background-color: var(--color-2);
+  position: absolute;
+  top: 60%;
+}
+
+.line-vertical {
+  width: 0.8em;
+  height: 100vh; /* or 100vh for full height */
+  background-color: var(--color-1);
+  position: absolute;
+}
+
+.line-vertical.center {
+  left: 70%;  
+  transform: translateX(-50%);
+}
+
+.line-vertical.right {
+  left: 80%;
+}
