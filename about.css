@@ -1,0 +1,79 @@
+button {
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    padding: 2rem;
+    font-size: 1em;
+    font-weight: 300;
+    transition: background-color .2s, transform .1s;
+}
+
+.toggle-about {
+    background-color: red;
+    opacity: 0;
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0;
+    border-radius: 50%;
+    animation: fadeIn .5s ease-in-out 2.6s forwards;
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 1000;
+}
+
+.toggle-about:hover {
+    background-color: brown;
+}
+
+/* Your existing mobile-first styles stay the same */
+
+/* Tablet and up (768px+) */
+@media (min-width: 768px) {
+    .toggle-about {
+        width: 1.5em;
+        height: 1.5em;
+        top: 1.5em;
+        right: 1.5em;
+    }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+    .toggle-about {
+        width: 1.7em;
+        height: 1.7em;
+    }
+}
+
+.about-overlay {
+    backdrop-filter: blur(.25rem);
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    width: 100svw;
+    height: 100svh;
+    transition: opacity .2s;
+    display: flex; /* Changed from none */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.about-overlay.active { /* Changed from :active to .active class */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
