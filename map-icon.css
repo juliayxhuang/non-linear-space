@@ -11,9 +11,11 @@
   left: 0.2em;
   transform-origin: left;
   transition: transform 0.1s ease;
-  z-index: 100;
+  z-index: 9999; /* way higher */
+  pointer-events: auto; /* ensures it's clickable */
 }
 
 .map:hover {
   transform: scale(1.5);
+  cursor: pointer;
 }

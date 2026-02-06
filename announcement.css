@@ -1,0 +1,28 @@
+/* @import 'line-1'; */
+
+.announce {
+    transition: transform 0.2s ease;
+    color: red;
+    position:relative;
+    font-size: 2.5em;
+    display: inline-block;
+}
+
+.popup p {
+     position: fixed;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    font-size: 1.5em; /* or 20px, 2em, etc - adjust as needed */
+    max-width: none; /* prevents any width restriction */
+    width: auto; /* allows it to expand */
+}
+
+.announce:hover .popup {
+    opacity: 1;
+}

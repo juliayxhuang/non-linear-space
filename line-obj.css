@@ -10,11 +10,10 @@ body {
 }
 
 .line-horizontal {
-  width: 100%; /* or 500px, 50%, etc */
+  width: 100vw; 
   height: 0.8em; /* thickness */
   background-color: var(--color-2);
   position: absolute;
-  top: 60%;
 }
 
 .line-vertical {
@@ -22,13 +21,8 @@ body {
   height: 100vh; /* or 100vh for full height */
   background-color: var(--color-1);
   position: absolute;
-}
+} 
 
-.line-vertical.center {
-  left: 70%;  
-  transform: translateX(-50%);
-}
-
-.line-vertical.right {
-  left: 80%;
+.line-vertical.pink {
+  background-color: pink;
 }
