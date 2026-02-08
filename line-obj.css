@@ -14,6 +14,12 @@ body {
   height: 0.8em; /* thickness */
   background-color: var(--color-2);
   position: absolute;
+  transition: opacity 0.1s ease;
+}
+
+.line-horizontal:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 0.2em rgba(255, 255, 255, 0.827);
 }
 
 .line-vertical {
@@ -21,8 +27,14 @@ body {
   height: 100vh; /* or 100vh for full height */
   background-color: var(--color-1);
   position: absolute;
+  transition: opacity 0.1s ease;
 } 
 
 .line-vertical.pink {
   background-color: pink;
+}
+
+.line-vertical:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 0.2em rgba(255, 255, 255, 0.827);
 }

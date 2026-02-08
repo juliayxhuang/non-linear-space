@@ -1,22 +1,13 @@
-button {
-    background-color: transparent;
-    cursor: pointer;
-    text-transform: uppercase;
-    border: none;
-    padding: 2rem;
-    font-size: 1em;
-    font-weight: 300;
-    transition: background-color .2s, transform .1s;
-}
+@import 'button.css';
 
+/* circle about button */
 .toggle-about {
     background-color: red;
-    opacity: 0;
+    opacity: 1;
     width: 1.2em;
     height: 1.2em;
     padding: 0;
     border-radius: 50%;
-    animation: fadeIn .5s ease-in-out 2.6s forwards;
     position: fixed;
     top: 1em;
     right: 1em;
@@ -27,7 +18,23 @@ button {
     background-color: brown;
 }
 
-/* Your existing mobile-first styles stay the same */
+.randomize-btn {
+    background-color: blueviolet;
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0;
+    border-radius: 50%;
+    position: fixed;
+    top: 2.5em;
+    right: 1em;
+    z-index: 1000;
+}
+
+.randomize-btn:hover {
+    background-color: purple;
+}
+
+/* existing mobile-first styles stay the same */
 
 /* Tablet and up (768px+) */
 @media (min-width: 768px) {
@@ -37,11 +44,21 @@ button {
         top: 1.5em;
         right: 1.5em;
     }
+    .randomize-btn {
+        width: 1.5em;
+        height: 1.5em;
+        top: 3.5em;
+        right: 1.5em;
+    }
 }
 
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
     .toggle-about {
+        width: 1.7em;
+        height: 1.7em;
+    }
+    .randomize-btn {
         width: 1.7em;
         height: 1.7em;
     }
@@ -57,13 +74,13 @@ button {
     width: 100svw;
     height: 100svh;
     transition: opacity .2s;
-    display: flex; /* Changed from none */
+    display: flex; 
     position: fixed;
     top: 0;
     left: 0;
 }
 
-.about-overlay.active { /* Changed from :active to .active class */
+.about-overlay.active { /* active class to keep the about open after click */
     opacity: 1;
     pointer-events: auto;
 }

@@ -6,11 +6,27 @@
     <title>Document</title>
     <link rel="stylesheet" href=styles.css>
     <link rel="stylesheet" href="line-obj.css">
+    <link rel="stylesheet" href="about.css">
 </head>
 <body>
+    <button class="toggle-about" id="aboutButton"></button>
+    <button class="randomize-btn" id="randomizeBtn"></button>
+
+    <div class="about-overlay" id="aboutOverlay">
+        <div class="about-content">
+            <h2>About</h2>
+            <p>Your about text here...</p>
+            <button id="closeAbout"></button>
+        </div>
+    </div>
+
+    <script src="js/about.js"></script>
+
     <a href=line-2.html class="line-horizontal" id="line3"></section>
     <a href=line-1.html class="line-vertical" id="line1"></section>
     <a href=line-3.html class="line-vertical pink" id="line2"></section>
+
+    
     <script src="js/lines-random.js"></script>
 </body>
 </html>
