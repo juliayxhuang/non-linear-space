@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="about.css">
+    <title>TEST</title>
+    <link rel="stylesheet" href="egg.css">
+    <link rel="stylesheet" href="map-icon.css">
 </head>
 <body>
-    <button class="toggle-about" id="aboutButton"></button>
-
-    <div class="about-overlay" id="aboutOverlay">
-        <div class="about-content">
-            <h2>About</h2>
-            <p>Your about text here...</p>
-            <button id="closeAbout"></button>
+    <a href="index.html" class="map" id="homeButton">home</a>
+    
+    <!-- Easter egg draggable circle -->
+    <div class="easter-egg" id="easterEgg">
+        <p id="eggHint">Drag me!</p>
+    </div>
+    
+    <!-- Popup that appears when egg is dragged to home button -->
+    <div id="egg-popup">
+        <div class="egg-trigger">
+            <div>
+                <button id="egg-modal-close">✕</button>
+                <p id="egg-modal-content">You found the easter egg! 🎉</p>
+                <button id="egg-modal-btn">Cool!</button>
+            </div>
         </div>
     </div>
-
-    <script src="js/about.js"></script>
+    
+    <script src="egg.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ body {
 
 .line-horizontal {
   width: 100vw; 
-  height: 0.8em; /* thickness */
+  height: 0.45em; /* thickness */
   background-color: var(--color-2);
   position: absolute;
   transition: opacity 0.1s ease;
@@ -23,7 +23,7 @@ body {
 }
 
 .line-vertical {
-  width: 0.8em;
+  width: 0.45em;
   height: 100vh; /* or 100vh for full height */
   background-color: var(--color-1);
   position: absolute;
@@ -37,4 +37,31 @@ body {
 .line-vertical:hover {
   opacity: 0.8;
   box-shadow: 0 0 0.2em rgba(255, 255, 255, 0.827);
+}
+
+@media (min-width: 768px) {
+    .line-horizontal {
+      height: 0.5em;
+    }
+    .line-vertical {
+      width: 0.5em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .line-horizontal {
+      height: 0.6em;
+    }
+    .line-vertical {
+      width: 0.6em;
+    }
+}
+
+@media (min-width: 1440px) {
+    .line-horizontal {
+      height: 0.8em;
+    }
+    .line-vertical {
+      width: 0.8em;
+    }
 }

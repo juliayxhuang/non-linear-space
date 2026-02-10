@@ -7,10 +7,30 @@
     <link rel="stylesheet" href=styles.css>
     <link rel="stylesheet" href="line-obj.css">
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="easteregg/egg.css">
 </head>
 <body>
+     <a href="index.html" class="map" id="homeButton">
+        <img src="media/Group 3.svg" alt="home">
+     </a>
     <button class="toggle-about" id="aboutButton"></button>
     <button class="randomize-btn" id="randomizeBtn"></button>
+
+    <!-- easter egg buttton -->
+    <div class="easter-egg" id="easterEgg">
+        <p id="eggHint">Drag me!</p>
+    </div>
+
+    <!-- egg popup -->
+    <div id="egg-popup">
+        <div class="egg-trigger">
+            <div>
+                <button id="egg-modal-close">✕</button>
+                <p id="egg-modal-content">You found the easter egg! 🎉</p>
+                <button id="egg-modal-btn">Cool!</button>
+            </div>
+        </div>
+    </div>
 
     <div class="about-overlay" id="aboutOverlay">
         <div class="about-content">
@@ -28,5 +48,6 @@
 
     
     <script src="js/lines-random.js"></script>
+    <script src="easteregg/egg.js"></script>
 </body>
 </html>

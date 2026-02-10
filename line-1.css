@@ -4,6 +4,8 @@
 body {
     text-align: center;
     margin: 5em;
+    font-size: 1em;
+    margin-top: 0;
 }
 
 p {
@@ -15,4 +17,16 @@ a {
   color: var(--color-1);
   font-weight: bold;
   text-decoration: none; /* removes underline */
+}
+
+@media (min-width: 768px) {
+    body {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        font-size: 1.4em;
+    }
 }
