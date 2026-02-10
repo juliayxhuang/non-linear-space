@@ -34,6 +34,35 @@
     background-color: purple;
 }
 
+.music-player {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 1.2em;
+    height: 1.2em;
+    padding: 0;
+    border-radius: 50%;
+    background-color: purple;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.music-player.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.music-player:hover {
+    transform: scale(1.1);
+}
+
 /* existing mobile-first styles stay the same */
 
 /* Tablet and up (768px+) */
