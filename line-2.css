@@ -10,12 +10,10 @@ body {
 }
 
 p {
-  display: flex;
-  align-items: center; /* vertical center only */
-  height: 100vh;
   margin: 0;
-  position: relative; 
-  z-index: 1; 
+}
+
+#text {
 }
 
 a {

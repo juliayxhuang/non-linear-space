@@ -3,18 +3,36 @@ document.addEventListener('DOMContentLoaded', function() {
   const position = localStorage.getItem('textPosition');
   const isHorizontal = localStorage.getItem('isHorizontal') === 'true';
   
-  if (position) {
-    text.style.position = 'absolute';
-    
-    if (isHorizontal) {
-      // Position vertically for horizontal line
-      text.style.top = position + '%';
-      text.style.transform = 'translateY(-50%)';
-      text.style.left = '0';
-    } else {
-      // Position horizontally for vertical lines
-      text.style.left = position + '%';
-      text.style.transform = 'translateX(-50%)';
-    }
+  console.log('Position from storage:', position);
+  console.log('Is horizontal:', isHorizontal);
+  
+  if (position && !isHorizontal) {
+    text.style.cssText = `
+      position: absolute !important;
+      left: ${position}% !important;
+      top: 50vh !important;
+      transform: translate(-50%, -50%) !important;
+      margin: 0 !important;
+      display: block !important;
+    `;
+  } else if (position && isHorizontal) {
+    text.style.cssText = `
+      position: absolute !important;
+      left: 0 !important;
+      top: ${position}vh !important;
+      transform: translateY(-50%) !important;
+      width: 100% !important;
+      margin: 0 !important;
+      display: block !important;
+    `;
+  } else {
+    text.style.cssText = `
+      position: absolute !important;
+      left: 50% !important;
+      top: 50vh !important;
+      transform: translate(-50%, -50%) !important;
+      margin: 0 !important;
+      display: block !important;
+    `;
   }
 });
