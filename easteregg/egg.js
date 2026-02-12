@@ -20,16 +20,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const originalBottom = easterEgg.style.bottom || '2rem';
     const originalRight = easterEgg.style.right || '2rem';
     
-    // Drag functionality
+    // Mouse events
     easterEgg.addEventListener('mousedown', dragStart);
     document.addEventListener('mousemove', drag);
     document.addEventListener('mouseup', dragEnd);
     
+    // Touch events for mobile
+    easterEgg.addEventListener('touchstart', dragStart, { passive: false });
+    document.addEventListener('touchmove', drag, { passive: false });
+    document.addEventListener('touchend', dragEnd);
+    
     function dragStart(e) {
-        if (easterEggTriggered) return; // Don't allow dragging after triggered
+        if (easterEggTriggered) return;
         
-        initialX = e.clientX - xOffset;
-        initialY = e.clientY - yOffset;
+        // Get the correct coordinates for both mouse and touch
+        const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+        
+        initialX = clientX - xOffset;
+        initialY = clientY - yOffset;
         
         if (e.target === easterEgg || easterEgg.contains(e.target)) {
             isDragging = true;
@@ -41,8 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isDragging) {
             e.preventDefault();
             
-            currentX = e.clientX - initialX;
-            currentY = e.clientY - initialY;
+            // Get the correct coordinates for both mouse and touch
+            const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+            const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+            
+            currentX = clientX - initialX;
+            currentY = clientY - initialY;
             
             // Get egg dimensions
             const eggWidth = easterEgg.offsetWidth;
@@ -99,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function triggerEasterEgg() {
-        if (easterEggTriggered) return; // Only trigger once
+        if (easterEggTriggered) return;
         
         easterEggTriggered = true;
         isDragging = false;
