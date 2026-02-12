@@ -7,85 +7,78 @@ document.addEventListener('DOMContentLoaded', function() {
     const pauseIcon = document.getElementById('pause-icon');
     
     let isDragging = false;
-    let currentX;
-    let currentY;
-    let initialX;
-    let initialY;
+    let currentX = 0;
+    let currentY = 0;
+    let initialX = 0;
+    let initialY = 0;
     let xOffset = 0;
     let yOffset = 0;
     let isPlaying = false;
     let easterEggTriggered = false;
     
-    // Store original position
-    const originalBottom = easterEgg.style.bottom || '2rem';
-    const originalRight = easterEgg.style.right || '2rem';
-    
-    // Mouse events
-    easterEgg.addEventListener('mousedown', dragStart);
-    document.addEventListener('mousemove', drag);
-    document.addEventListener('mouseup', dragEnd);
+    // Prevent default touch behavior on the egg itself
+    easterEgg.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+    }, { passive: false });
     
     // Touch events for mobile
-    easterEgg.addEventListener('touchstart', dragStart, { passive: false });
-    document.addEventListener('touchmove', drag, { passive: false });
-    document.addEventListener('touchend', dragEnd);
+    easterEgg.addEventListener('touchstart', handleStart, { passive: false });
+    document.addEventListener('touchmove', handleMove, { passive: false });
+    document.addEventListener('touchend', handleEnd, { passive: false });
     
-    function dragStart(e) {
+    // Mouse events for desktop
+    easterEgg.addEventListener('mousedown', handleStart);
+    document.addEventListener('mousemove', handleMove);
+    document.addEventListener('mouseup', handleEnd);
+    
+    function handleStart(e) {
         if (easterEggTriggered) return;
         
-        // Get the correct coordinates for both mouse and touch
-        const clientX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-        const clientY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+        let clientX, clientY;
+        
+        if (e.type === 'touchstart') {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        } else {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        }
         
         initialX = clientX - xOffset;
         initialY = clientY - yOffset;
         
-        if (e.target === easterEgg || easterEgg.contains(e.target)) {
-            isDragging = true;
-            easterEgg.classList.add('dragging');
-        }
+        isDragging = true;
+        easterEgg.classList.add('dragging');
     }
     
-    function drag(e) {
-        if (isDragging) {
-            e.preventDefault();
-            
-            // Get the correct coordinates for both mouse and touch
-            const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-            const clientY = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
-            
-            currentX = clientX - initialX;
-            currentY = clientY - initialY;
-            
-            // Get egg dimensions
-            const eggWidth = easterEgg.offsetWidth;
-            const eggHeight = easterEgg.offsetHeight;
-            
-            // Get window dimensions
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-            
-            // Calculate boundaries
-            const minX = -easterEgg.offsetLeft;
-            const maxX = windowWidth - easterEgg.offsetLeft - eggWidth;
-            const minY = -easterEgg.offsetTop;
-            const maxY = windowHeight - easterEgg.offsetTop - eggHeight;
-            
-            // Constrain to boundaries
-            currentX = Math.max(minX, Math.min(currentX, maxX));
-            currentY = Math.max(minY, Math.min(currentY, maxY));
-            
-            xOffset = currentX;
-            yOffset = currentY;
-            
-            setTranslate(currentX, currentY, easterEgg);
-            
-            // Check if overlapping with home button
-            checkOverlap();
+    function handleMove(e) {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        
+        let clientX, clientY;
+        
+        if (e.type === 'touchmove') {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        } else {
+            clientX = e.clientX;
+            clientY = e.clientY;
         }
+        
+        currentX = clientX - initialX;
+        currentY = clientY - initialY;
+        
+        xOffset = currentX;
+        yOffset = currentY;
+        
+        setTranslate(currentX, currentY, easterEgg);
+        checkOverlap();
     }
     
-    function dragEnd(e) {
+    function handleEnd(e) {
+        if (!isDragging) return;
+        
         initialX = currentX;
         initialY = currentY;
         
@@ -106,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
               eggRect.left > homeRect.right || 
               eggRect.bottom < homeRect.top || 
               eggRect.top > homeRect.bottom)) {
-            // They overlap! Trigger easter egg
             triggerEasterEgg();
         }
     }
@@ -127,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
         xOffset = 0;
         yOffset = 0;
         
-        // Optional: hide the easter egg after returning
         setTimeout(() => {
             easterEgg.style.opacity = '0';
         }, 500);
