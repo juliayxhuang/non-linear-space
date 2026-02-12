@@ -16,7 +16,8 @@ p {
 }
 
 a {
-  color: var(--color-2);
+  color: var(--color-3);
+  font-size: inherit;
   font-weight: bold;
   text-decoration: none; /* removes underline */
 }

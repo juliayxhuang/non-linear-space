@@ -18,5 +18,6 @@ p {
 a {
   color: var(--color-1);
   font-weight: bold;
+  font-size: inherit;
   text-decoration: none;
 }

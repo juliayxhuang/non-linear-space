@@ -16,7 +16,8 @@ p {
 }
 
 a {
-  color: var(--color-1);
+  color: var(--color-2);
   font-weight: bold;
+  font-size: inherit;
   text-decoration: none;
 }
