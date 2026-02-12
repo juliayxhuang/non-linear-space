@@ -6,7 +6,6 @@ body {
   overflow-y: hidden; /* no vertical scroll */
   white-space: nowrap; /* keeps text from wrapping */
   position: relative;
-  font-size: 1em;
 }
 
 p {
@@ -20,16 +19,4 @@ a {
   color: var(--color-2);
   font-weight: bold;
   text-decoration: none; /* removes underline */
-}
-
-@media (min-width: 768px) {
-    body {
-        font-size: 1.2em;
-    }
-}
-
-@media (min-width: 1024px) {
-    body {
-        font-size: 1.4em;
-    }
 }

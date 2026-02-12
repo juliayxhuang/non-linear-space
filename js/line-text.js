@@ -3,10 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const position = localStorage.getItem('textPosition');
   const isHorizontal = localStorage.getItem('isHorizontal') === 'true';
   
-  console.log('Position from storage:', position);
-  console.log('Is horizontal:', isHorizontal);
-  
   if (position && !isHorizontal) {
+    // Vertical line - position horizontally where line was, centered vertically
     text.style.cssText = `
       position: absolute !important;
       left: ${position}% !important;
@@ -14,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
       transform: translate(-50%, -50%) !important;
       margin: 0 !important;
       display: block !important;
+      text-align: center !important;
     `;
   } else if (position && isHorizontal) {
     text.style.cssText = `

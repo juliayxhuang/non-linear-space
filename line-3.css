@@ -1,9 +1,11 @@
 @import 'styles.css';
 @import 'map-icon.css';
-@import 'line-1.css';
 
 body {
-    margin: 0
+    margin: 0;
+    overflow-y: auto; /* allows vertical scrolling */
+    height: 100vh;
+    position: relative;
 }
 
 p {
@@ -16,5 +18,5 @@ p {
 a {
   color: var(--color-1);
   font-weight: bold;
-  text-decoration: none; /* removes underline */
+  text-decoration: none;
 }
