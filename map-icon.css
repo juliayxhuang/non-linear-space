@@ -1,7 +1,6 @@
 @import 'styles.css';
 
 .map {
-  color: rgb(208, 2, 2);
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9em !important;
@@ -17,6 +16,7 @@
 }
 
 .map img {
+  padding: 0.3em;
   filter: brightness(0.8); 
   width: 1.3em;
   height: auto;
@@ -39,6 +39,7 @@
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
     .map img {
+        padding: 0.2em;
         width: 1.7em;
         height: 1.7em;
     }
