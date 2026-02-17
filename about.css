@@ -48,10 +48,11 @@
 .about-content {
     font-family: "univers-next-pro", sans-serif;
     margin-top: 2em;
+    padding: 0.3em;
 }
 
 .about-content h2 {
-    font-size: 2em;
+    font-size: 1.7em;
     margin-bottom: 1rem;
 }
 
@@ -59,8 +60,9 @@
     line-height: 1.6;
     word-spacing: normal; /* Override any word-spacing from other styles */
     color: black;
-    font-size: 1em;
-    margin-top: 2em;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    margin-top: 1.5em;
 }
 
 .toggle-about img {
@@ -135,6 +137,15 @@
         width: 30%;
         max-width: 500px; 
     }
+
+    .about-content {
+        padding: 1em;
+    }
+
+    .about-content p {
+        font-size: 1.2em;
+        line-height: 1.3em;
+    }
 }
 
 /* Desktop (1024px+) */
@@ -146,6 +157,10 @@
     .randomize-btn {
         width: 1.7em;
         height: 1.7em;
+    }
+    .about-content p {
+        font-size: 1.4em;
+        line-height: 1.4em;
     }
 }
 
