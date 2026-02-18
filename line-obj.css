@@ -50,18 +50,18 @@ body {
 
 @media (min-width: 1024px) {
     .line-horizontal {
-      height: 0.6em;
+      height: 0.5em;
     }
     .line-vertical {
-      width: 0.6em;
+      width: 0.5em;
     }
 }
 
 @media (min-width: 1440px) {
     .line-horizontal {
-      height: 0.8em;
+      height: 0.6em;
     }
     .line-vertical {
-      width: 0.8em;
+      width: 0.6em;
     }
 }

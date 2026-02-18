@@ -11,7 +11,7 @@
     cursor: grab;
     align-items: center;
     gap: 8px;
-    background-color: blue;
+    background-color: rgb(152, 152, 152);
     border-radius: 50%;
     top: 7em;
     right: 1em;
