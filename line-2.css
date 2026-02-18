@@ -22,3 +22,10 @@ a {
   font-weight: bold;
   text-decoration: none; /* removes underline */
 }
+
+#yellow{
+  color: var(--color-1);
+  font-size: inherit;
+  font-weight: bold;
+  text-decoration: none; /* removes underline */
+}

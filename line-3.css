@@ -21,3 +21,10 @@ a {
   font-size: inherit;
   text-decoration: none;
 }
+
+#green {
+  color: var(--color-2);
+  font-size: inherit;
+  font-weight: bold;
+  text-decoration: none; /* removes underline */
+}
