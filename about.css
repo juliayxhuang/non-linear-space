@@ -67,7 +67,7 @@
 }
 
 .toggle-about img {
-    width: 1em;
+    width: 1.1em;
     height: auto;
     display: block;
 }
@@ -127,7 +127,7 @@
     }
     .toggle-about img {
         width: 1.5em;
-        height: 1.5em;
+        height: 1.5;
     }
     .randomize-btn {
         width: 1.5em;
@@ -150,8 +150,8 @@
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
     .toggle-about img {
-        width: 1.7em;
-        height: 1.7em;
+        width: 1.9em;
+        height: 1.9em;
     }
     .randomize-btn {
         width: 1.7em;
