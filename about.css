@@ -5,8 +5,8 @@
     opacity: 1;
     padding: 0;
     position: fixed;
-    top: 1em;
-    right: 1em;
+    top: 1.2em;
+    right: 1.1em;
     z-index: 999;
     border: none;
     cursor: pointer;
@@ -25,7 +25,7 @@
     border-left: 1px solid white;
     color: white;
     font-family: sans-serif;
-    z-index: 1002;
+    z-index: 1500;
     transition: right 0.4s ease;
     overflow-y: auto;
     padding: 1.5em;
@@ -122,10 +122,12 @@
 /* Tablet and up (768px+) */
 @media (min-width: 768px) {
     .toggle-about {
-        width: 1.5em;
-        height: 1.5em;
         top: 1.5em;
         right: 1.2em;
+    }
+    .toggle-about img {
+        width: 1.5em;
+        height: 1.5em;
     }
     .randomize-btn {
         width: 1.5em;
@@ -147,7 +149,7 @@
 
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
-    .toggle-about {
+    .toggle-about img {
         width: 1.7em;
         height: 1.7em;
     }

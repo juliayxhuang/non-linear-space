@@ -5,21 +5,20 @@
   font-weight: bold;
   font-size: 0.9em !important;
   position: fixed !important;
-  margin: 0.5em;
-  top: 1em;
-  left: 1em;
+  top: 1.2em;
+  left: 1.1em;
   transform-origin: left;
   transition: transform 0.1s ease;
-  z-index: 1000; /* way higher */
-  pointer-events: auto; /* ensures it's clickable */
-
+  z-index: 1000;
+  pointer-events: auto;
 }
 
 .map img {
-  padding: 0.3em;
+  padding: 0;
   filter: brightness(0.8); 
-  width: 1.3em;
+  width: 1.4em;
   height: auto;
+  display: block;
 }
 
 .map img:hover {
@@ -28,18 +27,19 @@
 }
 
 @media (min-width: 768px) {
+    .map {
+        top: 1.5em;
+        left: 1.2em;
+    }
     .map img {
         width: 1.5em;
         height: 1.5em;
-        top: 1.5em;
-        right: 1.5em;
     }
 }
 
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
     .map img {
-        padding: 0.2em;
         width: 1.7em;
         height: 1.7em;
     }
