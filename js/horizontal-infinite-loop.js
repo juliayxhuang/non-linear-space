@@ -9,22 +9,31 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Wait for other scripts to position the text
   setTimeout(() => {
-    // Create a wrapper container
+    // Store original positioning values
+    const originalPosition = text.style.position;
+    const originalTop = text.style.top;
+    const originalTransform = text.style.transform;
+    
+    // Create a wrapper container that takes the positioning
     const wrapper = document.createElement('div');
-    wrapper.style.cssText = text.style.cssText;
+    wrapper.style.position = originalPosition;
+    wrapper.style.top = originalTop;
+    wrapper.style.transform = originalTransform;
     wrapper.style.display = 'inline-block';
     wrapper.style.whiteSpace = 'nowrap';
+    wrapper.style.left = '0';
     
     // Move original text into wrapper
     text.parentNode.insertBefore(wrapper, text);
     wrapper.appendChild(text);
     
-    // Reset text styles to work inside wrapper
+    // Reset text to be relative inside wrapper
     text.style.position = 'relative';
     text.style.top = 'auto';
     text.style.left = 'auto';
     text.style.transform = 'none';
     text.style.display = 'inline-block';
+    text.style.margin = '0';
     
     function addMoreContent() {
       if (duplicateCount >= maxDuplicates) return;
@@ -32,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const newText = document.createElement('span');
       newText.innerHTML = originalContent;
       newText.style.display = 'inline-block';
+      newText.style.margin = '0';
       newText.style.fontSize = window.getComputedStyle(text).fontSize;
       newText.style.fontFamily = window.getComputedStyle(text).fontFamily;
       newText.style.color = window.getComputedStyle(text).color;
