@@ -22,6 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
       // Vertical scroll - randomize horizontal position (30-70% for bigger left margin)
       const randomLeft = Math.random() * 40 + 30;
       text.style.left = `${randomLeft}%`;
+      
+      // Also update all duplicates
+      let i = 0;
+      let duplicate = document.getElementById(`text-loop-${i}`);
+      while (duplicate) {
+        duplicate.style.left = `${randomLeft}%`;
+        i++;
+        duplicate = document.getElementById(`text-loop-${i}`);
+      }
     }
   });
 });
