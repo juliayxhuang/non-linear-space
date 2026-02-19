@@ -16,7 +16,7 @@
 .map img {
   padding: 0;
   filter: brightness(0.8); 
-  width: 1.4em;
+  width: 1.5em;
   height: auto;
   display: block;
 }
@@ -32,8 +32,8 @@
         left: 1.2em;
     }
     .map img {
-        width: 1.5em;
-        height: 1.5em;
+        width: 1.6em;
+        height: 1.6em;
     }
 }
 

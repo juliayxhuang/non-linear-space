@@ -70,6 +70,12 @@
     width: 1.1em;
     height: auto;
     display: block;
+    filter: brightness(0.8); 
+}
+
+.toggle-about img:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
 }
 
 .randomize-btn {
@@ -127,7 +133,7 @@
     }
     .toggle-about img {
         width: 1.5em;
-        height: 1.5;
+        height: 1.5em;
     }
     .randomize-btn {
         width: 1.5em;
