@@ -6,6 +6,7 @@
     <title>Line 1</title>
     <link rel="stylesheet" href="announcement.css">
     <link rel="stylesheet" href="line-1.css">
+    <link rel="stylesheet" href="about.css">
     <link id="favicon" rel="icon" href="media/train.png">
 </head>
 <body>
@@ -13,6 +14,19 @@
      <a href="index.html" class="map" id="homeButton">
         <img src="media/Group 3.svg" alt="home">
      </a>
+
+     <!-- about button -->
+     <button class="toggle-about" id="aboutButton">
+        <img src="media/Group 5.svg" alt="question mark">
+    </button>
+
+     <div class="about-sidebar" id="aboutSidebar">
+        <button class="close-about" id="closeAbout">×</button>
+        <div class="about-content">
+            <h2>ABOUT</h2>
+            <p>This site features a collection of narrations using stream of consciousness. Written on the subway, these narrations, coupled with the elements of the site mimics the experience of being in the subway, with its constant hustle & bustle.</p>
+        </div>
+    </div>
 
     <p id="text">tire screeching guy texting in front 
     uncrosses his legs
@@ -52,6 +66,7 @@
         <p class="popup">POP UP Announcement!</p>
     </div> -->
 
+    <script src="js/about.js"></script>
     <script src="js/line-text.js"></script>
     <script src="js/favicon.js"></script>
     <script src="js/clear-storage.js"></script>
